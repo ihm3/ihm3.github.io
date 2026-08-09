@@ -1,0 +1,28 @@
+/* ============ Reset & Variables ============ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0b0f1a;
+  --bg-elev: #111827;
+  --bg-elev2: #161f33;
+  --surface: #0f1626;
+  --border: #1e2a44;
+  --text: #e6ecf7;
+  --muted: #93a0bd;
+  --accent: #3ddc97;
+  --accent-dim: #1f8f66;
+  --danger: #ff5c5c;
+  --warning: #ffd166;
+  --info: #4cc9f0;
+  --mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  --sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius: 14px;
+  --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
