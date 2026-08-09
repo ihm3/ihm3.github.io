@@ -32,3 +32,30 @@ if (navLinks) {
 // ============ Footer year ============
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// ============ Hero: typing effect ============
+const typedEl = document.getElementById("typed");
+if (typedEl) {
+  const phrases = ["ECU software", "ISOBUS stacks", "CAN / J1939", "Embedded Linux", "HMI dashboards"];
+  let p = 0, i = 0, deleting = false;
+
+  function type() {
+    const current = phrases[p];
+    typedEl.textContent = current.slice(0, i);
+    if (!deleting && i < current.length) {
+      i++;
+      setTimeout(type, 85);
+    } else if (!deleting) {
+      deleting = true;
+      setTimeout(type, 1600);
+    } else if (i > 0) {
+      i--;
+      setTimeout(type, 45);
+    } else {
+      deleting = false;
+      p = (p + 1) % phrases.length;
+      setTimeout(type, 300);
+    }
+  }
+  type();
+}
