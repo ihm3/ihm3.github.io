@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Selected embedded systems and software projects by Metehan Erol.">
+  <meta property="og:title" content="Projects | Metehan Erol">
+  <meta property="og:type" content="website">
+  <title>Projects | Metehan Erol</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">me<span class="accent">_</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <div class="page-head-inner reveal">
+      <p class="hero-eyebrow">// selected work</p>
+      <h1 class="page-title">Projects</h1>
+      <p class="page-sub">Embedded systems, ECU software and real-time control solutions.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="projects-grid">
+      <article class="card tilt project-card reveal">
+        <span class="project-tag">ISOBUS</span>
+        <h3 class="card-title">ISOBUS VT &amp; TC Stack</h3>
+        <p class="card-text">ISO 11783-compliant Virtual Terminal and Task Controller implementations for agricultural ECUs.</p>
+        <div class="project-tech"><span class="badge">C++</span><span class="badge">ISO 11783</span><span class="badge">CAN</span></div>
+      </article>
+
+      <article class="card tilt project-card reveal delay-1">
+        <span class="project-tag">Control</span>
+        <h3 class="card-title">Smart Seeding System</h3>
+        <p class="card-text">Embedded control software integrating motor control and GNSS for automated seeding operations.</p>
+        <div class="project-tech"><span class="badge">STM32</span><span class="badge">GNSS</span><span class="badge">C</span></div>
+      </article>
+
+      <article class="card tilt project-card reveal delay-2">
+        <span class="project-tag">Navigation</span>
+        <h3 class="card-title">Off-Highway Navigation System</h3>
+        <p class="card-text">RTK GNSS and IMU-based path tracking algorithms for field machinery.</p>
+        <div class="project-tech"><span class="badge">RTK GNSS</span><span class="badge">IMU</span><span class="badge">C++</span></div>
+      </article>
+
+      <article class="card tilt project-card reveal">
+        <span class="project-tag">Linux</span>
+        <h3 class="card-title">Embedded Linux BSP</h3>
+        <p class="card-text">Production-ready Yocto BSPs for custom agricultural control units.</p>
+        <div class="project-tech"><span class="badge">Yocto</span><span class="badge">Buildroot</span><span class="badge">Bash</span></div>
+      </article>
+
+      <article class="card tilt project-card reveal delay-1">
+        <span class="project-tag">HMI</span>
+        <h3 class="card-title">Vehicle HMI Dashboard</h3>
+        <p class="card-text">Real-time dashboards for tractor and implement displays using LVGL and Qt.</p>
+        <div class="project-tech"><span class="badge">LVGL</span><span class="badge">Qt</span><span class="badge">C++</span></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> İsmail Hakki Metehan Erol</p>
+    <p class="footer-links">
+      <a href="contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="certifications.html">Certifications</a>
+    </p>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+</body>
+</html>
