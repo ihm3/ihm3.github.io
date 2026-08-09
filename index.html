@@ -27,6 +27,116 @@
       </ul>
     </div>
   </nav>
-  <div id="app"></div>
+
+  <header class="hero">
+    <canvas id="gridCanvas" class="grid-canvas"></canvas>
+    <div class="hero-inner">
+      <p class="hero-eyebrow reveal">// embedded software engineer</p>
+      <h1 class="hero-title reveal">İsmail Hakki Metehan Erol</h1>
+      <h2 class="hero-sub reveal">I build <span id="typed" class="accent"></span><span class="cursor">|</span></h2>
+      <p class="hero-desc reveal">
+        Specialized in <strong>C/C++</strong>, <strong>CAN / J1939</strong>, <strong>ISOBUS (ISO 11783)</strong>
+        and <strong>Embedded Linux (Yocto/Buildroot)</strong> for agricultural &amp; off-highway machinery.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="projects.html" class="btn btn-primary">View Projects</a>
+        <a href="contact.html" class="btn btn-ghost">Get in Touch</a>
+      </div>
+      <div class="hero-stats reveal" id="statCounters">
+        <div class="stat"><span class="stat-num" data-target="3">0</span><span class="stat-label">Years in field</span></div>
+        <div class="stat"><span class="stat-num" data-target="5">0</span><span class="stat-label">Key projects</span></div>
+        <div class="stat"><span class="stat-num" data-target="8">0</span><span class="stat-label">Skill groups</span></div>
+      </div>
+    </div>
+    <a href="#dashboard" class="scroll-hint" aria-label="Scroll to dashboard"><span></span></a>
+  </header>
+
+  <main class="container">
+    <section id="dashboard" class="dashboard-section">
+      <div class="section-head reveal">
+        <h2 class="section-title">Vehicle <span class="accent">Dashboard</span></h2>
+        <p class="section-sub">A peek inside the cab — RTK GNSS, IMU &amp; path tracking telemetry.</p>
+      </div>
+      <div class="dashboard reveal">
+        <div class="dash-scene">
+          <div class="dash-road">
+            <div class="road-lines"></div>
+          </div>
+          <div class="dash-hood"></div>
+        </div>
+        <div class="dash-panel">
+          <svg class="gauge" viewBox="0 0 200 120" aria-hidden="true">
+            <path class="gauge-track" d="M 20 110 A 80 80 0 0 1 180 110" fill="none"/>
+            <path class="gauge-arc" id="speedArc" d="M 20 110 A 80 80 0 0 1 180 110" fill="none"/>
+            <line class="gauge-needle" id="speedNeedle" x1="100" y1="110" x2="100" y2="40" />
+          </svg>
+          <div class="gauge-readout">
+            <span class="gauge-value" id="speedValue">0</span>
+            <span class="gauge-unit">km/h</span>
+          </div>
+          <div class="telemetry">
+            <div class="tele-row"><span class="tele-label">RTK GNSS</span><span class="tele-value" id="rtk">FIX</span></div>
+            <div class="tele-row"><span class="tele-label">IMU Roll</span><span class="tele-value" id="imu">0.0°</span></div>
+            <div class="tele-row"><span class="tele-label">Path Dev</span><span class="tele-value" id="pathDev">±0.00 m</span></div>
+            <div class="tele-row"><span class="tele-label">CAN Bus</span><span class="tele-value" id="canBus">ACTIVE</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-head reveal">
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            Embedded Software Engineer with hands-on experience in agricultural and off-highway machinery systems.
+            Specialized in C/C++ development, CAN, J1939, and ISOBUS (ISO 11783) communication, and embedded Linux
+            (Yocto/Buildroot) platforms.
+          </p>
+          <p>
+            Experienced in developing ECU software, HMI systems, and real-time control solutions for field machinery.
+            Comfortable working across the full embedded stack — from low-level drivers to application-level logic —
+            in production-oriented environments.
+          </p>
+          <p>
+            Currently based in <strong>Konya, Türkiye</strong>. Open to relocation — visa sponsorship required.
+          </p>
+        </div>
+        <div class="about-facts reveal">
+          <div class="fact"><span>Role</span><b>Embedded SW Engineer</b></div>
+          <div class="fact"><span>Domain</span><b>Agri &amp; Off-Highway</b></div>
+          <div class="fact"><span>Focus</span><b>ECU / HMI / RTK</b></div>
+          <div class="fact"><span>Base</span><b>Konya, Türkiye</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-head reveal">
+        <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
+      </div>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="section-head reveal">
+        <h2 class="section-title">Professional <span class="accent">Experience</span></h2>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> İsmail Hakki Metehan Erol</p>
+    <p class="footer-links">
+      <a href="contact.html">Contact</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+    </p>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 </body>
 </html>
