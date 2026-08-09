@@ -116,21 +116,26 @@ if (canvas) {
 }
 
 // ============ Scroll reveal ============
-const revealEls = document.querySelectorAll(".reveal");
-if (revealEls.length) {
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("visible");
-          io.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-  revealEls.forEach((el) => io.observe(el));
+function initReveals() {
+  document.querySelectorAll(".reveal:not(.observed)").forEach((el) => {
+    el.classList.add("observed");
+    revealObserver.observe(el);
+  });
 }
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+        revealObserver.unobserve(e.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+initReveals();
 
 // ============ Card hover tilt ============
 document.querySelectorAll(".tilt").forEach((card) => {
@@ -197,6 +202,7 @@ if (skillsGrid) {
       </div>`
     )
     .join("");
+  initReveals();
 }
 
 // ============ Experience timeline render ============
@@ -254,4 +260,5 @@ if (timeline) {
       </div>`
     )
     .join("");
+  initReveals();
 }

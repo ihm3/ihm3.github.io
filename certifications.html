@@ -89,6 +89,9 @@
           <span class="cert-check">✓</span><span>${c}</span><span class="cert-src">Udemy</span>
         </div>`)
       .join("");
+    requestAnimationFrame(() =>
+      certList.querySelectorAll(".reveal").forEach((el) => el.classList.add("visible"))
+    );
   </script>
 </body>
 </html>
