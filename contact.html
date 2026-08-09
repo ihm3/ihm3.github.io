@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Metehan Erol — Embedded Software Engineer.">
+  <meta property="og:title" content="Contact | Metehan Erol">
+  <meta property="og:type" content="website">
+  <title>Contact | Metehan Erol</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">me<span class="accent">_</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <div class="page-head-inner reveal">
+      <p class="hero-eyebrow">// let's build</p>
+      <h1 class="page-title">Contact</h1>
+      <p class="page-sub">Open to roles in embedded, off-highway and agricultural systems.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a class="contact-item reveal" href="mailto:ihm.eroll@gmail.com">
+          <span class="contact-icon">✉</span>
+          <div><span class="contact-label">Email</span><b>ihm.eroll@gmail.com</b></div>
+        </a>
+        <a class="contact-item reveal delay-1" href="tel:+905071894630">
+          <span class="contact-icon">☎</span>
+          <div><span class="contact-label">Phone</span><b>+90 507 189 46 30</b></div>
+        </a>
+        <a class="contact-item reveal delay-2" href="https://github.com/ihm3" target="_blank" rel="noopener">
+          <span class="contact-icon">◉</span>
+          <div><span class="contact-label">GitHub</span><b>github.com/ihm3</b></div>
+        </a>
+        <a class="contact-item reveal delay-3" href="https://linkedin.com/in/ihm3" target="_blank" rel="noopener">
+          <span class="contact-icon">in</span>
+          <div><span class="contact-label">LinkedIn</span><b>linkedin.com/in/ihm3</b></div>
+        </a>
+        <div class="contact-item reveal delay-3">
+          <span class="contact-icon">◆</span>
+          <div><span class="contact-label">Location</span><b>Konya, Türkiye</b></div>
+        </div>
+        <a href="cv/ihmerol_cv_a.pdf" download class="btn btn-primary cv-btn reveal">Download CV</a>
+      </div>
+
+      <form class="contact-form card reveal" id="contactForm">
+        <h3 class="card-title">Send a message</h3>
+        <label class="field">
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@company.com" required>
+        </label>
+        <label class="field">
+          <span>Message</span>
+          <textarea name="message" rows="5" placeholder="Tell me about your opportunity…" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="form-note" id="formNote" hidden>Thanks — I'll get back to you soon.</p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> İsmail Hakki Metehan Erol</p>
+    <p class="footer-links">
+      <a href="mailto:ihm.eroll@gmail.com">Email</a>
+      <a href="https://github.com/ihm3" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/ihm3" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const note = document.getElementById("formNote");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      note.hidden = false;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
