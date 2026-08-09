@@ -26,3 +26,59 @@
   --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
+/* ============ Base & Background ============ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(61, 220, 151, 0.06), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(76, 201, 240, 0.05), transparent 45%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #6ff0bb;
+}
+
+.container {
+  width: min(1080px, 92%);
+  margin: 0 auto;
+}
+
+::selection {
+  background: var(--accent);
+  color: #06231a;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-dim);
+}
+
+.accent {
+  color: var(--accent);
+}
