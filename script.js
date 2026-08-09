@@ -174,3 +174,84 @@ const toTop = document.getElementById("toTop");
 if (toTop) {
   toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 }
+
+// ============ Skills render ============
+const skillsGrid = document.getElementById("skillsGrid");
+if (skillsGrid) {
+  const skills = [
+    { icon: "▣", title: "Languages", items: ["C", "C++", "Embedded C", "Python", "Bash"] },
+    { icon: "◈", title: "Embedded Platforms", items: ["STM32", "TI", "ESP32", "Nuvoton", "Custom ECUs"] },
+    { icon: "⇄", title: "Fieldbus & Protocols", items: ["ISOBUS (ISO 11783)", "CAN", "J1939", "CANopen", "SPI", "I2C", "UART"] },
+    { icon: "◉", title: "Embedded Linux", items: ["Yocto", "Buildroot", "BSP Development"] },
+    { icon: "▤", title: "HMI & Visualization", items: ["Qt", "LVGL", "BT81X Series"] },
+    { icon: "✚", title: "Off-Highway Systems", items: ["ECU Software", "RTK GNSS", "IMU", "Path Tracking"] },
+    { icon: "⚒", title: "Quality & Debugging", items: ["MISRA-C", "Bootloaders", "JTAG", "GDB"] },
+    { icon: "⚙", title: "Tools", items: ["Git", "CMake", "KiCad", "Jira"] },
+  ];
+  skillsGrid.innerHTML = skills
+    .map(
+      (s, i) => `
+      <div class="card tilt skill-card reveal delay-${(i % 3)}">
+        <div class="skill-head"><span class="skill-icon">${s.icon}</span><h3 class="card-title">${s.title}</h3></div>
+        <div class="skill-tags">${s.items.map((t) => `<span class="badge">${t}</span>`).join("")}</div>
+      </div>`
+    )
+    .join("");
+}
+
+// ============ Experience timeline render ============
+const timeline = document.getElementById("timeline");
+if (timeline) {
+  const jobs = [
+    {
+      role: "Embedded Software Engineer",
+      company: "Doken Teknoloji ve Makine",
+      period: "2023 — Present",
+      loc: "Konya, Türkiye",
+      pts: [
+        "Developed ECU software for agricultural machinery using C/C++.",
+        "Implemented ISOBUS (ISO 11783) stacks incl. Virtual Terminal (VT) and Task Controller (TC).",
+        "Designed multi-ECU communication using CAN and J1939 protocols.",
+        "Built custom embedded Linux systems using Yocto and Buildroot.",
+        "Developed HMI applications with Qt, LVGL, and BT81X.",
+        "Collaborated on drivers, system bring-up, and real-time optimization.",
+      ],
+    },
+    {
+      role: "Embedded Systems Engineer",
+      company: "Lamptime Elektrik",
+      period: "2022 — 2023",
+      loc: "Türkiye",
+      pts: [
+        "Developed embedded applications with BLE, Zigbee, and Raspberry Pi.",
+        "Integrated wireless communication for IoT-enabled embedded systems.",
+      ],
+    },
+    {
+      role: "Embedded Software Engineer Intern",
+      company: "Atiker Yazılım",
+      period: "2022",
+      loc: "Türkiye",
+      pts: [
+        "Worked on Embedded Linux systems and Qt-based industrial HMI applications.",
+        "Assisted in real-time Linux integration and system-level debugging.",
+      ],
+    },
+  ];
+  timeline.innerHTML = jobs
+    .map(
+      (j, i) => `
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="card">
+          <div class="tl-head">
+            <h3 class="card-title">${j.role}</h3>
+            <span class="tl-period">${j.period}</span>
+          </div>
+          <p class="tl-company">${j.company} · ${j.loc}</p>
+          <ul class="tl-list">${j.pts.map((p) => `<li>${p}</li>`).join("")}</ul>
+        </div>
+      </div>`
+    )
+    .join("");
+}
