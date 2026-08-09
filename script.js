@@ -114,3 +114,63 @@ if (canvas) {
   draw();
   window.addEventListener("resize", () => { cancelAnimationFrame(raf); resize(); });
 }
+
+// ============ Scroll reveal ============
+const revealEls = document.querySelectorAll(".reveal");
+if (revealEls.length) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+  revealEls.forEach((el) => io.observe(el));
+}
+
+// ============ Card hover tilt ============
+document.querySelectorAll(".tilt").forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
+    const r = card.getBoundingClientRect();
+    const rx = ((e.clientY - r.top) / r.height - 0.5) * -8;
+    const ry = ((e.clientX - r.left) / r.width - 0.5) * 8;
+    card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+  });
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "";
+  });
+});
+
+// ============ Stat counters ============
+const counters = document.querySelectorAll(".stat-num");
+if (counters.length) {
+  const cio = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = +el.dataset.target;
+        let cur = 0;
+        const step = Math.max(1, Math.ceil(target / 60));
+        const timer = setInterval(() => {
+          cur += step;
+          if (cur >= target) { cur = target; clearInterval(timer); }
+          el.textContent = cur;
+        }, 24);
+        cio.unobserve(el);
+      });
+    },
+    { threshold: 0.6 }
+  );
+  counters.forEach((c) => cio.observe(c));
+}
+
+// ============ Back to top ============
+const toTop = document.getElementById("toTop");
+if (toTop) {
+  toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+}
