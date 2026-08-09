@@ -66,3 +66,63 @@
   background: linear-gradient(180deg, transparent, #0c1526 30%, #0e1830 100%);
   border-top: 2px solid rgba(255, 255, 255, 0.06);
 }
+/* ============ Panel & gauges ============ */
+.dash-panel {
+  background: linear-gradient(180deg, var(--bg-elev), var(--surface));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.gauge {
+  width: 220px;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.gauge-track {
+  stroke: var(--border);
+  stroke-width: 14;
+  stroke-linecap: round;
+}
+
+.gauge-arc {
+  stroke: var(--accent);
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+  transition: stroke-dashoffset 0.3s ease;
+  filter: drop-shadow(0 0 6px rgba(61, 220, 151, 0.5));
+}
+
+.gauge-needle {
+  stroke: var(--danger);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transform-origin: 100px 110px;
+  transition: transform 0.3s ease;
+}
+
+.gauge-readout {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.gauge-value {
+  font-family: var(--mono);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.gauge-unit {
+  color: var(--muted);
+  font-family: var(--mono);
+  margin-left: 6px;
+}
