@@ -60,61 +60,6 @@ if (typedEl) {
   type();
 }
 
-// ============ Grid canvas background ============
-const canvas = document.getElementById("gridCanvas");
-if (canvas) {
-  const ctx = canvas.getContext("2d");
-  let w, h, nodes = [], raf;
-
-  function resize() {
-    w = canvas.width = canvas.offsetWidth;
-    h = canvas.height = canvas.offsetHeight;
-    const count = Math.min(70, Math.floor((w * h) / 16000));
-    nodes = Array.from({ length: count }, () => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-    }));
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, w, h);
-    ctx.strokeStyle = "rgba(61, 220, 151, 0.18)";
-    ctx.lineWidth = 1;
-    for (const n of nodes) {
-      n.x += n.vx;
-      n.y += n.vy;
-      if (n.x < 0 || n.x > w) n.vx *= -1;
-      if (n.y < 0 || n.y > h) n.vy *= -1;
-    }
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i], b = nodes[j];
-        const dx = a.x - b.x, dy = a.y - b.y;
-        const d = Math.hypot(dx, dy);
-        if (d < 130) {
-          ctx.globalAlpha = 1 - d / 130;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
-        }
-      }
-      ctx.globalAlpha = 1;
-      ctx.fillStyle = "rgba(61, 220, 151, 0.5)";
-      ctx.beginPath();
-      ctx.arc(nodes[i].x, nodes[i].y, 1.5, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    raf = requestAnimationFrame(draw);
-  }
-
-  resize();
-  draw();
-  window.addEventListener("resize", () => { cancelAnimationFrame(raf); resize(); });
-}
-
 // ============ Scroll reveal ============
 function initReveals() {
   document.querySelectorAll(".reveal:not(.observed)").forEach((el) => {
@@ -184,14 +129,14 @@ if (toTop) {
 const skillsGrid = document.getElementById("skillsGrid");
 if (skillsGrid) {
   const skills = [
-    { icon: "▣", title: "Languages", items: ["C", "C++", "Embedded C", "Python", "Bash"] },
-    { icon: "◈", title: "Embedded Platforms", items: ["STM32", "TI", "ESP32", "Nuvoton", "Custom ECUs"] },
-    { icon: "⇄", title: "Fieldbus & Protocols", items: ["ISOBUS (ISO 11783)", "CAN", "J1939", "CANopen", "SPI", "I2C", "UART"] },
-    { icon: "◉", title: "Embedded Linux", items: ["Yocto", "Buildroot", "BSP Development"] },
-    { icon: "▤", title: "HMI & Visualization", items: ["Qt", "LVGL", "BT81X Series"] },
-    { icon: "✚", title: "Off-Highway Systems", items: ["ECU Software", "RTK GNSS", "IMU", "Path Tracking"] },
-    { icon: "⚒", title: "Quality & Debugging", items: ["MISRA-C", "Bootloaders", "JTAG", "GDB"] },
-    { icon: "⚙", title: "Tools", items: ["Git", "CMake", "KiCad", "Jira"] },
+    { icon: "â–£", title: "Languages", items: ["C", "C++", "Embedded C", "Python", "Bash"] },
+    { icon: "â—ˆ", title: "Embedded Platforms", items: ["STM32", "TI", "ESP32", "Nuvoton", "Custom ECUs"] },
+    { icon: "â‡„", title: "Fieldbus & Protocols", items: ["ISOBUS (ISO 11783)", "CAN", "J1939", "CANopen", "SPI", "I2C", "UART"] },
+    { icon: "â—‰", title: "Embedded Linux", items: ["Yocto", "Buildroot", "BSP Development"] },
+    { icon: "â–¤", title: "HMI & Visualization", items: ["Qt", "LVGL", "BT81X Series"] },
+    { icon: "âœš", title: "Off-Highway Systems", items: ["ECU Software", "RTK GNSS", "IMU", "Path Tracking"] },
+    { icon: "âš’", title: "Quality & Debugging", items: ["MISRA-C", "Bootloaders", "JTAG", "GDB"] },
+    { icon: "âš™", title: "Tools", items: ["Git", "CMake", "KiCad", "Jira"] },
   ];
   skillsGrid.innerHTML = skills
     .map(
@@ -212,8 +157,8 @@ if (timeline) {
     {
       role: "Embedded Software Engineer",
       company: "Doken Teknoloji ve Makine",
-      period: "2023 — Present",
-      loc: "Konya, Türkiye",
+      period: "2023 â€” Present",
+      loc: "Konya, TÃ¼rkiye",
       pts: [
         "Developed ECU software for agricultural machinery using C/C++.",
         "Implemented ISOBUS (ISO 11783) stacks incl. Virtual Terminal (VT) and Task Controller (TC).",
@@ -226,8 +171,8 @@ if (timeline) {
     {
       role: "Embedded Systems Engineer",
       company: "Lamptime Elektrik",
-      period: "2022 — 2023",
-      loc: "Türkiye",
+      period: "2022 â€” 2023",
+      loc: "TÃ¼rkiye",
       pts: [
         "Developed embedded applications with BLE, Zigbee, and Raspberry Pi.",
         "Integrated wireless communication for IoT-enabled embedded systems.",
@@ -235,9 +180,9 @@ if (timeline) {
     },
     {
       role: "Embedded Software Engineer Intern",
-      company: "Atiker Yazılım",
+      company: "Atiker YazÄ±lÄ±m",
       period: "2022",
-      loc: "Türkiye",
+      loc: "TÃ¼rkiye",
       pts: [
         "Worked on Embedded Linux systems and Qt-based industrial HMI applications.",
         "Assisted in real-time Linux integration and system-level debugging.",
@@ -254,7 +199,7 @@ if (timeline) {
             <h3 class="card-title">${j.role}</h3>
             <span class="tl-period">${j.period}</span>
           </div>
-          <p class="tl-company">${j.company} · ${j.loc}</p>
+          <p class="tl-company">${j.company} Â· ${j.loc}</p>
           <ul class="tl-list">${j.pts.map((p) => `<li>${p}</li>`).join("")}</ul>
         </div>
       </div>`

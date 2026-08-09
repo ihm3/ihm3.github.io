@@ -1,6 +1,6 @@
 # Metehan Erol — Portfolio
 
-Personal portfolio website for **İsmail Hakki Metehan Erol**, Embedded Software Engineer specializing in agricultural & off-highway systems.
+Personal portfolio website for **İsmail Hakkı Metehan Erol**, Embedded Software Engineer specializing in agricultural & off-highway systems.
 
 ## Pages
 
