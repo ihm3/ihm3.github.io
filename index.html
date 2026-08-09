@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio of Metehan Erol, Embedded Software Engineer specializing in agricultural and off-highway systems, ISOBUS, CAN/J1939, and Embedded Linux.">
-  <meta name="author" content="İsmail Hakki Metehan Erol">
+  <meta name="author" content="İsmail Hakkı Metehan Erol">
   <meta property="og:title" content="Metehan Erol | Embedded Software Engineer">
   <meta property="og:description" content="Embedded Software Engineer — ISOBUS, CAN/J1939, Embedded Linux, RTK GNSS.">
   <meta property="og:type" content="website">
   <title>Metehan Erol | Embedded Software Engineer</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="interior.css">
   <script src="script.js" defer></script>
-  <script src="dashboard.js" defer></script>
 </head>
 <body id="top">
   <nav class="navbar" id="navbar">
@@ -31,10 +30,27 @@
   </nav>
 
   <header class="hero">
-    <canvas id="gridCanvas" class="grid-canvas"></canvas>
+    <div class="cab-scene" aria-hidden="true">
+      <div class="cab-field">
+        <div class="crop-rows"></div>
+        <div class="crop-clouds"></div>
+        <div class="crop-sky"></div>
+      </div>
+      <div class="cab-windshield">
+        <div class="cab-header"></div>
+        <div class="cab-pillar pillar-l"></div>
+        <div class="cab-pillar pillar-r"></div>
+        <div class="cab-dash">
+          <div class="wheel">
+            <div class="wheel-inner"></div>
+          </div>
+        </div>
+      </div>
+      <div class="cab-vignette"></div>
+    </div>
     <div class="hero-inner">
       <p class="hero-eyebrow reveal">// embedded software engineer</p>
-      <h1 class="hero-title reveal">İsmail Hakki Metehan Erol</h1>
+      <h1 class="hero-title reveal">İsmail Hakkı Metehan Erol</h1>
       <h2 class="hero-sub reveal">I build <span id="typed" class="accent"></span><span class="cursor">|</span></h2>
       <p class="hero-desc reveal">
         Specialized in <strong>C/C++</strong>, <strong>CAN / J1939</strong>, <strong>ISOBUS (ISO 11783)</strong>
@@ -50,42 +66,10 @@
         <div class="stat"><span class="stat-num" data-target="8">0</span><span class="stat-label">Skill groups</span></div>
       </div>
     </div>
-    <a href="#dashboard" class="scroll-hint" aria-label="Scroll to dashboard"><span></span></a>
+    <a href="#about" class="scroll-hint" aria-label="Scroll to about"><span></span></a>
   </header>
 
   <main class="container">
-    <section id="dashboard" class="dashboard-section">
-      <div class="section-head reveal">
-        <h2 class="section-title">Vehicle <span class="accent">Dashboard</span></h2>
-        <p class="section-sub">A peek inside the cab — RTK GNSS, IMU &amp; path tracking telemetry.</p>
-      </div>
-      <div class="dashboard reveal">
-        <div class="dash-scene">
-          <div class="dash-road">
-            <div class="road-lines"></div>
-          </div>
-          <div class="dash-hood"></div>
-        </div>
-        <div class="dash-panel">
-          <svg class="gauge" viewBox="0 0 200 120" aria-hidden="true">
-            <path class="gauge-track" d="M 20 110 A 80 80 0 0 1 180 110" fill="none"/>
-            <path class="gauge-arc" id="speedArc" d="M 20 110 A 80 80 0 0 1 180 110" fill="none"/>
-            <line class="gauge-needle" id="speedNeedle" x1="100" y1="110" x2="100" y2="40" />
-          </svg>
-          <div class="gauge-readout">
-            <span class="gauge-value" id="speedValue">0</span>
-            <span class="gauge-unit">km/h</span>
-          </div>
-          <div class="telemetry">
-            <div class="tele-row"><span class="tele-label">RTK GNSS</span><span class="tele-value" id="rtk">FIX</span></div>
-            <div class="tele-row"><span class="tele-label">IMU Roll</span><span class="tele-value" id="imu">0.0°</span></div>
-            <div class="tele-row"><span class="tele-label">Path Dev</span><span class="tele-value" id="pathDev">±0.00 m</span></div>
-            <div class="tele-row"><span class="tele-label">CAN Bus</span><span class="tele-value" id="canBus">ACTIVE</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="about" class="section">
       <div class="section-head reveal">
         <h2 class="section-title">About <span class="accent">Me</span></h2>
@@ -131,7 +115,7 @@
   </main>
 
   <footer class="footer">
-    <p>© <span id="year"></span> İsmail Hakki Metehan Erol</p>
+    <p>© <span id="year"></span> İsmail Hakkı Metehan Erol</p>
     <p class="footer-links">
       <a href="contact.html">Contact</a>
       <a href="projects.html">Projects</a>
