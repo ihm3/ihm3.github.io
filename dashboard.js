@@ -8,6 +8,7 @@ const pathEl = document.getElementById("pathDev");
 const canEl = document.getElementById("canBus");
 
 const ARC_LENGTH = 251; // full visible arc path length
+let currentPct = 0;
 
 function setGauge(pct) {
   const clamped = Math.max(0, Math.min(1, pct));
@@ -31,8 +32,6 @@ function animateGaugeTo(targetPct) {
   }
   requestAnimationFrame(tick);
 }
-
-let currentPct = 0;
 
 function updateTelemetry(speedKmh) {
   const roll = (Math.random() * 4 - 2).toFixed(1);
