@@ -1,24 +1,47 @@
-﻿/* ============ Cab interior SVG background scene ============ */
-.cab-svg {
+﻿/* ============ Hero rotating photo background ============ */
+.hero-bg {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
   z-index: 0;
   overflow: hidden;
   background: #0b0f1a;
 }
 
-/* Moving crop rows seen through the windshield */
-.cab-crops {
-  animation: cabcropmove 26s linear infinite;
-  transform: perspective(900px) rotateX(14deg) scale(1.8);
-  transform-origin: 50% 100%;
+.bg-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: bgFade 18s ease-in-out infinite;
 }
 
-@keyframes cabcropmove {
-  from { transform: perspective(900px) rotateX(14deg) scale(1.8) translateX(-60px); }
-  to { transform: perspective(900px) rotateX(14deg) scale(1.8) translateX(60px); }
+.bg-img-a {
+  animation-name: bgFadeA;
+}
+
+.bg-img-b {
+  animation-name: bgFadeB;
+}
+
+/* Crossfade: A shows, then B fades in, holds, then back to A */
+@keyframes bgFadeA {
+  0%, 45% { opacity: 1; }
+  55%, 100% { opacity: 0; }
+}
+
+@keyframes bgFadeB {
+  0%, 45% { opacity: 0; }
+  55%, 100% { opacity: 1; }
+}
+
+/* Dark overlay for readability */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 8, 15, 0.6) 0%, rgba(5, 8, 15, 0.35) 40%, rgba(5, 8, 15, 0.8) 100%),
+    radial-gradient(ellipse at 50% 45%, transparent 35%, rgba(4, 6, 12, 0.55) 100%);
 }
 
 /* Readability panel over the scene */
@@ -27,8 +50,10 @@
   z-index: 2;
 }
 
-@media (max-width: 768px) {
-  .cab-svg {
-    transform: translateX(14%);
+@media (prefers-reduced-motion: reduce) {
+  .bg-img {
+    animation: none;
   }
+  .bg-img-a { opacity: 1; }
+  .bg-img-b { opacity: 0; }
 }
