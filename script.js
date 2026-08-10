@@ -129,20 +129,20 @@ if (toTop) {
 const skillsGrid = document.getElementById("skillsGrid");
 if (skillsGrid) {
   const skills = [
-    { icon: "â–£", title: "Languages", items: ["C", "C++", "Embedded C", "Python", "Bash"] },
-    { icon: "â—ˆ", title: "Embedded Platforms", items: ["STM32", "TI", "ESP32", "Nuvoton", "Custom ECUs"] },
-    { icon: "â‡„", title: "Fieldbus & Protocols", items: ["ISOBUS (ISO 11783)", "CAN", "J1939", "CANopen", "SPI", "I2C", "UART"] },
-    { icon: "â—‰", title: "Embedded Linux", items: ["Yocto", "Buildroot", "BSP Development"] },
-    { icon: "â–¤", title: "HMI & Visualization", items: ["Qt", "LVGL", "BT81X Series"] },
-    { icon: "âœš", title: "Off-Highway Systems", items: ["ECU Software", "RTK GNSS", "IMU", "Path Tracking"] },
-    { icon: "âš’", title: "Quality & Debugging", items: ["MISRA-C", "Bootloaders", "JTAG", "GDB"] },
-    { icon: "âš™", title: "Tools", items: ["Git", "CMake", "KiCad", "Jira"] },
+    { title: "Languages", items: ["C", "C++", "Embedded C", "Python", "Bash"] },
+    { title: "Embedded Platforms", items: ["STM32", "TI", "ESP32", "Nuvoton", "Custom ECUs"] },
+    { title: "Fieldbus & Protocols", items: ["ISOBUS (ISO 11783)", "CAN", "J1939", "CANopen", "SPI", "I2C", "UART"] },
+    { title: "Embedded Linux", items: ["Yocto", "Buildroot", "BSP Development"] },
+    { title: "HMI & Visualization", items: ["Qt", "LVGL", "BT81X Series"] },
+    { title: "Off-Highway Systems", items: ["ECU Software", "RTK GNSS", "IMU", "Path Tracking"] },
+    { title: "Quality & Debugging", items: ["MISRA-C", "Bootloaders", "JTAG", "GDB"] },
+    { title: "Tools", items: ["Git", "CMake", "KiCad", "Jira"] },
   ];
   skillsGrid.innerHTML = skills
     .map(
       (s, i) => `
       <div class="card tilt skill-card reveal delay-${(i % 3)}">
-        <div class="skill-head"><span class="skill-icon">${s.icon}</span><h3 class="card-title">${s.title}</h3></div>
+        <div class="skill-head"><h3 class="card-title">${s.title}</h3></div>
         <div class="skill-tags">${s.items.map((t) => `<span class="badge">${t}</span>`).join("")}</div>
       </div>`
     )
