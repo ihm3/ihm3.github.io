@@ -1,4 +1,4 @@
-// ============ Navbar: scroll state ============
+﻿// ============ Navbar: scroll state ============
 const navbar = document.getElementById("navbar");
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
