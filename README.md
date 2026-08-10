@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <img src="https://img.shields.io/badge/Embedded%20Software-Engineer-3ddc97?style=for-the-badge" alt="Embedded Software Engineer"/>
 </p>
 
