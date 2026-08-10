@@ -157,8 +157,8 @@ if (timeline) {
     {
       role: "Embedded Software Engineer",
       company: "Doken Teknoloji ve Makine",
-      period: "2023 â€” Present",
-      loc: "Konya, TÃ¼rkiye",
+      period: "2023 — Present",
+      loc: "Konya, Türkiye",
       pts: [
         "Developed ECU software for agricultural machinery using C/C++.",
         "Implemented ISOBUS (ISO 11783) stacks incl. Virtual Terminal (VT) and Task Controller (TC).",
@@ -171,8 +171,8 @@ if (timeline) {
     {
       role: "Embedded Systems Engineer",
       company: "Lamptime Elektrik",
-      period: "2022 â€” 2023",
-      loc: "TÃ¼rkiye",
+      period: "2022 — 2023",
+      loc: "Türkiye",
       pts: [
         "Developed embedded applications with BLE, Zigbee, and Raspberry Pi.",
         "Integrated wireless communication for IoT-enabled embedded systems.",
@@ -180,9 +180,9 @@ if (timeline) {
     },
     {
       role: "Embedded Software Engineer Intern",
-      company: "Atiker YazÄ±lÄ±m",
+      company: "Atiker Yazılım",
       period: "2022",
-      loc: "TÃ¼rkiye",
+      loc: "Türkiye",
       pts: [
         "Worked on Embedded Linux systems and Qt-based industrial HMI applications.",
         "Assisted in real-time Linux integration and system-level debugging.",
@@ -199,7 +199,7 @@ if (timeline) {
             <h3 class="card-title">${j.role}</h3>
             <span class="tl-period">${j.period}</span>
           </div>
-          <p class="tl-company">${j.company} Â· ${j.loc}</p>
+          <p class="tl-company">${j.company} · ${j.loc}</p>
           <ul class="tl-list">${j.pts.map((p) => `<li>${p}</li>`).join("")}</ul>
         </div>
       </div>`
