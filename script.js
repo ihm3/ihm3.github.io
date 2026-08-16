@@ -36,7 +36,16 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 // ============ Hero: typing effect ============
 const typedEl = document.getElementById("typed");
 if (typedEl) {
-  const phrases = ["ECU software", "ISOBUS stacks", "CAN / J1939", "Embedded Linux", "HMI dashboards"];
+  const phrases = [
+    "Embedded Software",
+    "Embedded Linux",
+    "CAN/LIN/J1939",
+    "ISO 11783 Stacks",
+    "Automotive ECU Software",
+    "RTK GNSS Navigation",
+    "Embedded HMI & UI",
+    "AUTOSAR Solutions",
+  ];
   let p = 0, i = 0, deleting = false;
 
   function type() {
