@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Embedded%20Software-Engineer-3ddc97?style=for-the-badge" alt="Embedded Software Engineer"/>
 </p>
 
-<h1 align="center">i.h. Metehan Erol</h1>
+<h1 align="center">I.H. Metehan Erol</h1>
 <h3 align="center">Embedded Software Engineer · Agricultural &amp; Off-Highway Systems</h3>
 
 <p align="center">
