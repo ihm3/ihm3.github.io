@@ -838,11 +838,6 @@ h1, h2, h3, h4 {
   font-size: 0.98rem;
 }
 
-.cv-btn {
-  margin-top: 8px;
-  text-align: center;
-}
-
 /* ============ Contact form ============ */
 .contact-form {
   display: grid;
